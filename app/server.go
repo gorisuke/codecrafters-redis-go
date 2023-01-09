@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+const pongResponse = "+PONG\r\n"
+
 func main() {
 	fmt.Println("Logs from your program will appear here!")
 
@@ -28,5 +30,5 @@ func main() {
 		fmt.Println("error reading from client: ", err.Error())
 		os.Exit(1)
 	}
-	conn.Write([]byte("+PONG\r\n"))
+	conn.Write([]byte(pongResponse))
 }
